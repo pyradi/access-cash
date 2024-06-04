@@ -1,0 +1,116 @@
+<html><head>
+
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="download.png">
+            <link rel="stylesheet" href="fontawesome-free-6.2.0-web/css/all.css">
+
+    <title></title>
+
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,900&display=swap');
+   * {
+      font-family: 'Poppins', sans-serif;
+   }
+    body {
+      padding-left: 10px;
+      padding-right: 15px;
+      font-size: 14px;
+    }
+
+input {
+  width: 100%;
+  height: 35px;
+  outline: none;
+  border-radius: 5px;
+  border-color: 1px solid rgb(29, 201, 155);
+  box-shadow: 0px 0px 5px rgb(29, 201, 155);
+ font-family: 'Poppins', sans-serif;
+}
+
+button {
+  width: 100%;
+  height: 35px;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #9400FF;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #9400FF;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+button:hover {
+  background-color: #EBE9FF;
+  box-shadow: 0px 0px 5px #9400FF;
+  color: black;
+  border: rgb(29, 201, 155);
+}
+
+span {
+  font-weight: bold;
+}
+
+  </style>
+
+	<script type="text/javascript">
+
+		function calculatePayment() {
+
+			var amount = parseFloat(document.getElementById("amount").value);
+
+			var payment = amount * 0.1; // calculates 10% of the input amount
+
+			document.getElementById("payment").value = payment.toFixed(2);
+
+		}
+
+    //my work oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+
+    function passvalue(){
+      var firstname=document.getElementById("payment").value;
+      localStorage.setItem("textvalue", firstname);
+
+      var middlename=document.getElementById("amount").value;
+      localStorage.setItem("textmiddle", middlename);
+
+      var lastname=document.getElementById("name").value;
+      localStorage.setItem("textname", lastname);
+
+    }
+
+	</script>
+
+</head>
+
+<body>
+	<h3>PalmPay Funding Section</h3>
+
+	<form action="pnext.html">
+
+    <label for="number"></label>
+
+    <input type="tel" placeholder="PalmPay Account Number" required="" maxlength="10" oninvalid="this.setCustomValidity('Please enter your 10-digits PalmPay account number.')" oninput="setCustomValidity('')"><br><br>
+
+    <label for="number"></label>
+
+    <input type="tel" placeholder="Confirm PalmPay Account Number" required="" maxlength="10" oninvalid="this.setCustomValidity('Please Re-enter your 10-digits PalmPay account number.')" oninput="setCustomValidity('')"><br><br>
+
+    <label for="name"></label>
+
+    <input type="text" id="name" placeholder="PalmPay Account Name" required="" oninvalid="this.setCustomValidity('Please enter your PalmPay account name.')" oninput="setCustomValidity('')"><br><br>
+
+		<label for="amount"></label>
+
+		<input type="number" id="amount" name="amount" required="" placeholder="Amount (₦)" min="20000.00" step="5" max="500000.00" class="form-control" oninput="calculatePayment()" oninvalid="this.setCustomValidity('The minimum amount of money you can fund once is ₦20,000.00 and the maximum amount is  ₦200,000.00')"><br><br>
+
+		<label for="payment"></label>
+
+		<input type="text" id="payment" name="payment" placeholder="Amount You Will Pay To Fund" readonly=""><br>
+    <br><br><br>
+
+    <button onclick="passvalue();" style="outline: none;">Fund Now</button>
+
+	</form>

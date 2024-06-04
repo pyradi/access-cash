@@ -1,0 +1,256 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="download.png">
+   <link rel="stylesheet" href="fontawesome-free-6.2.0-web/css/all.css">
+    <title></title>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,900&display=swap');
+
+        .alert {
+  padding: 10px;
+  background-color: #9400FF;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.alert.success {background-color: #9400FF;}
+.alert.info {background-color: #2196F3;}
+.alert.warning {background-color: #9400FF;}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+        body {
+            padding: 10px;
+            font-size: 12px;
+            color: black;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        span {
+            color: black;
+        }
+
+        .dot-spinner {
+            --uib-size: 2.8rem;
+            --uib-speed: .9s;
+            --uib-color: #9400FF;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            height: var(--uib-size);
+            width: var(--uib-size);
+            }
+
+.dot-spinner__dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+}
+
+.dot-spinner__dot::before {
+  content: '';
+  height: 20%;
+  width: 20%;
+  border-radius: 50%;
+  background-color: var(--uib-color);
+  transform: scale(0);
+  opacity: 0.5;
+  animation: pulse0112 calc(var(--uib-speed) * 1.111) ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(18, 31, 53, 0.3);
+}
+
+.dot-spinner__dot:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.dot-spinner__dot:nth-child(2)::before {
+  animation-delay: calc(var(--uib-speed) * -0.875);
+}
+
+.dot-spinner__dot:nth-child(3) {
+  transform: rotate(90deg);
+}
+
+.dot-spinner__dot:nth-child(3)::before {
+  animation-delay: calc(var(--uib-speed) * -0.75);
+}
+
+.dot-spinner__dot:nth-child(4) {
+  transform: rotate(135deg);
+}
+
+.dot-spinner__dot:nth-child(4)::before {
+  animation-delay: calc(var(--uib-speed) * -0.625);
+}
+
+.dot-spinner__dot:nth-child(5) {
+  transform: rotate(180deg);
+}
+
+.dot-spinner__dot:nth-child(5)::before {
+  animation-delay: calc(var(--uib-speed) * -0.5);
+}
+
+.dot-spinner__dot:nth-child(6) {
+  transform: rotate(225deg);
+}
+
+.dot-spinner__dot:nth-child(6)::before {
+  animation-delay: calc(var(--uib-speed) * -0.375);
+}
+
+.dot-spinner__dot:nth-child(7) {
+  transform: rotate(270deg);
+}
+
+.dot-spinner__dot:nth-child(7)::before {
+  animation-delay: calc(var(--uib-speed) * -0.25);
+}
+
+.dot-spinner__dot:nth-child(8) {
+  transform: rotate(315deg);
+}
+
+.dot-spinner__dot:nth-child(8)::before {
+  animation-delay: calc(var(--uib-speed) * -0.125);
+}
+
+@keyframes pulse0112 {
+  0%,
+  100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#bottone1 {
+ padding-left: 33px;
+ padding-right: 33px;
+ padding-bottom: 16px;
+ padding-top: 16px;
+ border-radius: 9px;
+ background: #9400FF;
+ border: none;
+ font-family: inherit;
+ text-align: center;
+ cursor: pointer;
+ transition: 0.4s;
+}
+
+#bottone1:hover {
+ box-shadow: 7px 5px 56px -14px #9400FF;
+}
+
+#bottone1:active {
+ transform: scale(0.97);
+ box-shadow: 7px 5px 56px -10px #9400FF;
+}
+
+.diagram {
+  background-color: whitesmoke;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px black;
+}
+
+.alert.warning {
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px black;
+}
+    </style>
+</head>
+<body>
+    <div class="alert warning">
+        <span class="closebtn">×</span>  
+        <strong>Warning!</strong> 
+        <br>
+        Read carefully and make sure you pay the required amount of money demanded from you based on the amount you want to fund in your PalmPay Account! If you pay less than required your funding will not be processed.
+      </div>
+      
+      <script>
+      var close = document.getElementsByClassName("closebtn");
+      var i;
+      
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function(){
+          var div = this.parentElement;
+          div.style.opacity = "0";
+          setTimeout(function(){ div.style.display = "none"; }, 600);
+        }
+      }
+      </script>
+    <div class="diagram">
+<p style="font-weight: bold;">
+    Note: You will be paying ₦<span id="result" style="color: #9400FF; font-weight: bold;"></span>, in order for us to process your funding of ₦<span id="amount" style="color: #9400FF; font-weight: bold;"></span><b style="color: #9400FF;">.00</b>&nbsp;into your PalmPay account immediately!
+</p>
+
+<hr>
+
+<h3>Account Number <span style="float: right;">9550803319</span> </h3>
+
+<h3>Account Name <span style="float: right;">Dark Website</span> </h3>
+
+<h3>Bank <span style="float: right;">PalmPay Ltd</span> </h3>
+
+<br>
+<br>
+<br>
+<center>
+    <a href="comfirming.html" style="outline: none; text-decoration: none;">
+<button id="bottone1"><strong style="color: white; outline: none;">I have Made My Payment</strong></button>
+</a>
+</center>
+
+<br>
+<br>
+<br>
+
+<center>
+    <div class="dot-spinner">
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+    </div>
+    <p style="text-align: center; font-weight: bold;">We are trying to detect a payment from you on this account!</p>
+</center> 
+</div>
+
+<script>
+    document.getElementById("result").innerHTML=localStorage.getItem("textvalue");
+    document.getElementById("amount").innerHTML=localStorage.getItem("textmiddle");
+    document.getElementById("name").innerHTML=localStorage.getItem("textname");
+</script>

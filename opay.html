@@ -1,0 +1,99 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            margin: 0 auto;
+            margin-left: 5px;
+            margin-right: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            background-color: rgb(29, 201, 155);
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            outline: none;
+            color: black;
+            font-weight: bold;
+            font-size: 12px;
+            cursor: text;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .column {
+            background-color: rgb(29, 201, 155);
+            border-radius: 10px;
+            padding: 5px;
+            flex: 33.33%;
+        }
+
+        h3 {
+            font-size: 14px;
+        }
+    </style>
+    <img src="man.png" alt="" srcset="" width="35px" style="border-radius: 50%; margin-bottom: 9px;">
+
+<a href="info.html">
+    <img src="icon.png" alt="" srcset="" width="24px" style="border-radius: 50%; float: right; margin-bottom: 9px;">
+</a>
+    <div class="container">
+        <a href="fund.html">
+        <h3>Fund Wallet +</h3>
+    </a>
+    </div>
+    
+    <div class="content">
+        <h3>Quick Actions</h3>
+        <div class="services">
+            <div class="row">
+                <div class="column">
+                    <a href="https://www.opayweb.com/">
+                  <img src="opay.png" alt="" style="width: 50px; border-radius: 50%;">
+                  <p>Opay</p>
+                </a>
+                </div>
+                &nbsp;
+                <div class="column">
+                    <a href="#">
+                  <img src="opay.png" alt="" style="width: 50px; border-radius: 50%;">
+                  <p>M.Services</p>
+                </a>
+                </div>
+                &nbsp;
+                <div class="column">
+                    <a href="fund.html">
+                  <img src="opay.png" alt="" style="width:50px; border-radius: 50%;">
+                  <p>Fund Wallet</p>
+                  </a>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="transaction">
+        <h3>Transaction History <img src="load.gif" alt="" srcset="" style="width: 12px;"></h3>
+        <div class="no">
+            <br><br><br>
+            <br><br><br>
+            <center>
+            <img src="trans.gif" alt="" srcset="" style="width: 30px;">
+            <p style="font-size: 12px;">Today's transactions will appear here!</p>
+        </center>
+        </div>
+    </div>
